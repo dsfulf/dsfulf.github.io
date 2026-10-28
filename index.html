@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>D.S. Fulford</title>
-<meta name="description" content="Research artifacts and blog posts by D.S. Fulford.">
+<title>David S. Fulford</title>
+<meta name="description" content="Research artifacts and blog posts by David S. Fulford.">
 <style>
   :root {
     --bg: #fbfbfa;
@@ -30,7 +30,8 @@
     font: 17px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
   }
   main { max-width: 42rem; margin: 0 auto; padding: 3.5rem 16px 4rem; }
-  h1 { font-size: 1.6rem; margin: 0 0 2.5rem; letter-spacing: -0.01em; }
+  h1 { font-size: 1.6rem; margin: 0; letter-spacing: -0.01em; }
+  .updated { margin: 0.25rem 0 2.5rem; color: var(--muted); font-size: 0.85rem; }
   h2 {
     font-size: 0.8rem;
     font-weight: 600;
@@ -41,35 +42,91 @@
   }
   h2 a { color: inherit; }
   ul { list-style: none; margin: 0; padding: 0; }
-  li { padding: 0.6rem 0; border-top: 1px solid var(--rule); }
+  li { padding: 0.75rem 0; border-top: 1px solid var(--rule); }
   li:last-child { border-bottom: 1px solid var(--rule); }
   a { color: var(--link); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  .note { display: block; color: var(--muted); font-size: 0.9rem; }
+  .title { font-weight: 600; }
+  .date { display: block; color: var(--muted); font-size: 0.85rem; }
+  .desc { margin: 0.25rem 0 0; font-size: 0.95rem; }
+  .about p { margin: 0 0 0.75rem; }
 </style>
 </head>
 <body>
 <main>
-  <h1>D.S. Fulford</h1>
+  <h1>David S. Fulford</h1>
+  <p class="updated">Last updated <time datetime="2026-10-28">October 28, 2026</time></p>
 
   <h2><a href="/research-artifacts/">Research artifacts</a></h2>
   <ul>
-    <li><a href="/research-artifacts/spe-167242.html">Transient Hyperbolic Model</a>
-      <span class="note">SPE-167242</span></li>
-    <li><a href="/research-artifacts/spe-201404.html">Bayesian Derivatives &amp; Optimization</a>
-      <span class="note">SPE-201404</span></li>
-    <li><a href="/research-artifacts/mfmb-latent-slope.html">Multiphase Flowing Material Balance</a>
-      <span class="note">Bayesian pore volume estimation</span></li>
+    <li>
+      <a class="title" href="/research-artifacts/spe-167242.html">Transient Hyperbolic Model (SPE-167242)</a>
+      <span class="date">November 2013 · SPE Unconventional Resources Conference – Canada</span>
+      <p class="desc">Fulford and Blasingame 2013: the THM, its segment forms, the analytic solution from reservoir
+        properties, the numerical cases, MFHW heterogeneity, a fit to your own data, and a radial THM with the
+        Fetkovich type curve.</p>
+    </li>
+    <li>
+      <a class="title" href="/research-artifacts/spe-201404.html">Bayesian Derivatives &amp; Optimization (SPE-201404)</a>
+      <span class="date">October 2020 · SPE Annual Technical Conference and Exhibition</span>
+      <p class="desc">The Bayesian pressure and rate derivative: the latent log-log slope with its posterior bands,
+        the regularisation path and NUTS for the paper's pressure, rate and qDb cases and your own data, checked
+        against the PyMC 6 posteriors, computed in the browser by the bayesian-derivative WebAssembly engine.</p>
+    </li>
+    <li>
+      <a class="title" href="/research-artifacts/mfmb-latent-slope.html">Multiphase Flowing Material Balance – Bayesian Pore Volume Estimation</a>
+      <span class="date">2022 · after Thompson and Ruddick, URTeC 3718045</span>
+      <p class="desc">Multiphase flowing material balance with a Bayesian latent slope: the density plot, the
+        pore-volume trajectory, β*, rates, ratios and saturations for three simulated wells, the KITE field well and
+        your own data, computed in the browser by the bayesian-derivative WebAssembly engine.</p>
+    </li>
   </ul>
 
   <h2>Blog</h2>
   <ul>
-    <li><a href="/blog/covid19/covid19.html">Hierarchical Bayesian Model for COVID-19 Data</a></li>
-    <li><a href="/blog/bn_montyhall/bn_montyhall.html">Bayesian Networks Are Decision Making Tools</a></li>
-    <li><a href="/blog/conv/conv.html">Convolution in the Oilfield</a></li>
-    <li><a href="/blog/nonlin_reg/nonlin_reg.html">Non-Linear Regression on Production Data</a></li>
-    <li><a href="/blog/lin_reg/lin_reg.html">Linear Regression: What's in a Mean?</a></li>
+    <li>
+      <a class="title" href="/blog/covid19/covid19.html">Hierarchical Bayesian Model for COVID-19 Data</a>
+      <span class="date">April 2020 · updated August 2020</span>
+      <p class="desc">A hierarchical PyMC3 model that fits total cases, daily cases and deaths together with a
+        shared growth rate, tracked and re-forecast through the first and second waves.</p>
+    </li>
+    <li>
+      <a class="title" href="/blog/bn_montyhall/bn_montyhall.html">Bayesian Networks Are Decision Making Tools</a>
+      <span class="date">February 2020</span>
+      <p class="desc">Bayesian networks for inferring missing or latent variables, worked through the Monty Hall
+        problem.</p>
+    </li>
+    <li>
+      <a class="title" href="/blog/conv/conv.html">Convolution in the Oilfield</a>
+      <span class="date">October 2018 · updated February 2020</span>
+      <p class="desc">Using <code>numpy.convolve</code> to build a rig-line production profile from a type well
+        and a schedule of well start dates.</p>
+    </li>
+    <li>
+      <a class="title" href="/blog/nonlin_reg/nonlin_reg.html">Non-Linear Regression on Production Data</a>
+      <span class="date">January 2019</span>
+      <p class="desc">Fitting non-linear models to production data directly, and why the choice of cost function
+        matters more than least squares suggests.</p>
+    </li>
+    <li>
+      <a class="title" href="/blog/lin_reg/lin_reg.html">What's in a Mean? A Visual Primer on Linear Regression</a>
+      <span class="date">December 2018</span>
+      <p class="desc">Linear regression from the ground up, starting from the arithmetic mean as its simplest
+        case.</p>
+    </li>
   </ul>
+
+  <h2>About</h2>
+  <div class="about">
+    <p>Petroleum engineer working on decline curve analysis, rate- and pressure-transient analysis, and Bayesian
+      methods for production data.</p>
+    <ul>
+      <li><a class="title" href="https://github.com/dsfulf">github.com/dsfulf</a>
+        <span class="date">Personal repositories</span></li>
+      <li><a class="title" href="https://github.com/petbox-dev">github.com/petbox-dev</a>
+        <span class="date">petbox-dca (decline curve analysis), gwr (numerical Laplace inversion), tafra</span></li>
+    </ul>
+  </div>
 </main>
 </body>
 </html>
